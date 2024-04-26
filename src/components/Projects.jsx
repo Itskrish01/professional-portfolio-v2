@@ -17,10 +17,8 @@ const Projects = () => {
         <div className="flex flex-wrap gap-10 mb-10">
           {projects.map((item) => (
             <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-              style={{
-                backgroundImage: `url(${item.backgroundUrl})`,
-              }}
+              className="block rounded-tr-[50px] rounded-xl relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+              style={{border: `2px solid ${'#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`}}
               key={item.id}
             >
               <div className="relative z-2 flex flex-col min-h-[20rem] p-[2.4rem]">
