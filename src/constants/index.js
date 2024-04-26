@@ -192,6 +192,15 @@ export const skillsApps = [
 
 export const projects = [
   {
+    id: "001",
+    title: "Apple Landing page (iPhone 15)",
+    text: "Landing page for iPhone 15 Pro, it's almost the same as real apple website landing page for iPhone 15 Pro",
+    backgroundUrl: "./src/assets/projects/card-1.svg",
+    iconUrl: benefitIcon1,
+    imageUrl: benefitImage2,
+    url: "https://iphone-15-landing-page.netlify.app/",
+  },
+  {
     id: "0",
     title: "Ecommerce website",
     text: "An ecommerce site built on NextJS. Enjoy seamless navigation, responsive design, and essential shopping functionalities like cart management, item display, variant-based imagery, and effective filtering.",
