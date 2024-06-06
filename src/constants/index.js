@@ -3,7 +3,6 @@ import {
   benefitIcon2,
   benefitIcon3,
   benefitIcon4,
-  benefitImage2,
   flutter,
   typescript,
   git,
@@ -197,7 +196,7 @@ export const projects = [
     text: "Landing page for iPhone 15 Pro, it's almost the same as real apple website landing page for iPhone 15 Pro",
     backgroundUrl: "./src/assets/projects/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: 'cool-projects/apple-site.png',
     url: "https://iphone-15-landing-page.netlify.app/",
   },
   {
@@ -206,18 +205,8 @@ export const projects = [
     text: "An ecommerce site built on NextJS. Enjoy seamless navigation, responsive design, and essential shopping functionalities like cart management, item display, variant-based imagery, and effective filtering.",
     backgroundUrl: "./src/assets/projects/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: 'cool-projects/ecommerce.png',
     url: "https://nextjs-ecommerce-app-five.vercel.app/",
-  },
-  {
-    id: "1",
-    title: "Toddy",
-    text: "Toddy is your task management sidekick, built with React and TypeScript. Easily create, edit, and organize tasks, with added security through authentication. Stay in control with Toddy!",
-    backgroundUrl: "./src/assets/projects/card-2.svg",
-    iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
-    light: true,
-    url: "https://toddy-itskrish01.netlify.app/register",
   },
   {
     id: "2",
@@ -225,7 +214,7 @@ export const projects = [
     text: "Welcome to the Quiz App project! This is a web application built using React and Vite that allows users to take quizzes on various topics.",
     backgroundUrl: "./src/assets/projects/card-3.svg",
     iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
+    imageUrl: 'cool-projects/quiz.png',
     url: "https://itskrish01-coddy-quzzy.netlify.app/",
   },
   {
@@ -234,8 +223,7 @@ export const projects = [
     text: "Tweetie TuTu: Craft hilarious fake tweets effortlessly and add a playful twist to your social media game!",
     backgroundUrl: "./src/assets/projects/card-4.svg",
     iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
-    light: true,
+    imageUrl: 'cool-projects/tweet.png',
     url: "https://tweetie-tutu.netlify.app/",
   },
   {
@@ -244,7 +232,7 @@ export const projects = [
     text: "A dictionary app where you can search for words and it provides you all the details, I used dictionary API to fetch the data.",
     backgroundUrl: "./src/assets/projects/card-5.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: 'cool-projects/dict.png',
     url: "https://dictionary-itskrish01.netlify.app/",
   },
   {
@@ -253,7 +241,7 @@ export const projects = [
     text: "An AI tool, that you can use to Rephrase text and generate images, Also a translator.",
     backgroundUrl: "./src/assets/projects/card-6.svg",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
+    imageUrl: 'cool-projects/ai.png',
     url: "https://ai-tooly-itskrish01.netlify.app/",
   },
 ];

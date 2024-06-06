@@ -1,9 +1,9 @@
 import { projects } from "../constants";
 import Heading from "./Heading";
+import { PinContainer } from "./PinContainer";
 import Section from "./Section";
-import Arrow from "../assets/svg/Arrow";
-import { GradientLight } from "./design/Projects";
-import ClipPath from "../assets/svg/ClipPath";
+
+import { FaLocationArrow } from "react-icons/fa6";
 
 const Projects = () => {
   return (
@@ -13,49 +13,46 @@ const Projects = () => {
           className="md:max-w-md lg:max-w-2xl"
           title="Some Of My Cool Projects, I Have Created"
         />
-
-        <div className="flex flex-wrap gap-10 mb-10">
+        <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
           {projects.map((item) => (
-            <div
-              className="block rounded-tr-[50px] rounded-xl relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-              style={{border: `2px solid ${'#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`}}
+            <a
+              href={item.url}
+              className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
               key={item.id}
             >
-              <div className="relative z-2 flex flex-col min-h-[20rem] p-[2.4rem]">
-                <h5 className="h5 mb-5">{item.title}</h5>
-                <p className="body-2 mb-6 text-n-3">{item.text}</p>
-                <div className="flex items-center justify-between mt-auto">
-               
-                  <a href={item.url} target="_blank" className="flex items-center hover:translate-x-2 transition-all">
-                    <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                      Demo
+              <PinContainer title={"project"} href={item.url}>
+                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+                  <img
+                    src={item.imageUrl}
+                    alt="cover"
+                    className="z-10 object-cover rounded-lg"
+                  />
+                </div>
+
+                <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                  {item.title}
+                </h1>
+
+                <p
+                  className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                  style={{
+                    color: "#BEC1DD",
+                    margin: "1vh 0",
+                  }}
+                >
+                  {item.text}
+                </p>
+
+                <div className="flex items-center justify-between mt-7 mb-3">
+                  <div className="flex justify-center items-center">
+                    <p className="flex lg:text-xl md:text-xs text-sm text-indigo-300">
+                      Check Live Site
                     </p>
-                    <Arrow />
-                  </a>
+                    <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  </div>
                 </div>
-              </div>
-
-              {item.light && <GradientLight />}
-
-              <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "url(#benefits)" }}
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  {item.imageUrl && (
-                    <img
-                      src={item.imageUrl}
-                      width={380}
-                      height={362}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-              </div>
-
-              <ClipPath />
-            </div>
+              </PinContainer>
+            </a>
           ))}
         </div>
       </div>
