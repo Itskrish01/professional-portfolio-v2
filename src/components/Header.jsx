@@ -1,12 +1,12 @@
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-import {  logo } from "../assets";
+import { logo } from "../assets";
 import { navigation } from "../constants";
-import Button from "./Button";
-import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useEffect, useState } from "react";
+import MagicButton from "./design/MagicButton";
+import { BiMenu } from "react-icons/bi";
 
 const Header = () => {
   const pathname = useLocation();
@@ -48,12 +48,21 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed ${showTopBar ? "top-0" : "lg:top-4 lg:w-1/2 lg:left-1/2 lg:-translate-x-[50%] lg:rounded-full lg:border lg:border-n-4"} top-0 left-0 w-full z-50 lg:bg-n-8/90 lg:backdrop-blur-sm ${
+      className={`fixed ${
+        showTopBar
+          ? "top-0"
+          : "lg:top-4 lg:w-1/2 lg:left-1/2 lg:-translate-x-[50%] lg:rounded-full lg:border lg:border-n-4"
+      } top-0 left-0 w-full z-50 lg:bg-n-8/90 lg:backdrop-blur-sm ${
         openNavigation ? "bg-n-8" : "bg-n-8/90 transition-all backdrop-blur-sm"
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className={`block w-[12rem] xl:mr-8 ${!showTopBar ? "lg:hidden" : ""}`} href="#hero">
+        <a
+          className={`block w-[12rem] xl:mr-8 ${
+            !showTopBar ? "lg:hidden" : ""
+          }`}
+          href="#hero"
+        >
           <img src={logo} width={50} height={40} alt="Brainwave" />
         </a>
 
@@ -70,7 +79,9 @@ const Header = () => {
                 onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 ${showTopBar ? "md:py-8" : ""} lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                } px-6 py-6 ${
+                  showTopBar ? "md:py-8" : ""
+                } lg:-mr-0.25 lg:text-xs lg:font-semibold ${
                   item.url === pathname.hash
                     ? "z-2 lg:text-n-1"
                     : "lg:text-n-1/50"
@@ -83,18 +94,9 @@ const Header = () => {
 
           <HamburgerMenu />
         </nav>
-
-        <Button className={`hidden lg:flex ${showTopBar ? "" : "lg:hidden"}`}>
-          Hello
-        </Button>
-
-        <Button
-          className="ml-auto lg:hidden"
-          px="px-3"
-          onClick={toggleNavigation}
-        >
-          <MenuSvg openNavigation={openNavigation} />
-        </Button>
+        <div className="ml-auto lg:hidden">
+          <MagicButton handleClick={toggleNavigation} title={<BiMenu />} />
+        </div>
       </div>
     </div>
   );

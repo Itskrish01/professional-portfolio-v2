@@ -81,11 +81,7 @@ export const roadmap = [
     title: "App Developer",
     text: "Experienced app developer proficient in Flutter for cross-platform mobile development. Skilled in Dart, crafting beautiful and responsive UIs. Collaborative team player focused on delivering high-quality, seamless user experiences.",
   },
-  {
-    id: "2",
-    title: "Design",
-    text: "Experienced UI/UX specialist with a strong foundation in frontend development. Proficient in crafting visually appealing and intuitive user interfaces that prioritize usability and engagement. Collaborative and detail-oriented, they excel in designing seamless digital experiences that leave a lasting impression.",
-  },
+  
 ];
 
 export const collabText =
@@ -198,6 +194,7 @@ export const projects = [
     iconUrl: benefitIcon1,
     imageUrl: 'cool-projects/apple-site.png',
     url: "https://iphone-15-landing-page.netlify.app/",
+    techStack: ['Tailwind', "GSAP", "React"]
   },
   {
     id: "0",
@@ -207,6 +204,7 @@ export const projects = [
     iconUrl: benefitIcon1,
     imageUrl: 'cool-projects/ecommerce.png',
     url: "https://nextjs-ecommerce-app-five.vercel.app/",
+    techStack: ['NextJS', "Tailwind", "React"]
   },
   {
     id: "2",
@@ -216,6 +214,7 @@ export const projects = [
     iconUrl: benefitIcon3,
     imageUrl: 'cool-projects/quiz.png',
     url: "https://itskrish01-coddy-quzzy.netlify.app/",
+    techStack: ['React', "Vite", "Tailwind", "Framer Motion"]
   },
   {
     id: "3",
@@ -225,6 +224,7 @@ export const projects = [
     iconUrl: benefitIcon4,
     imageUrl: 'cool-projects/tweet.png',
     url: "https://tweetie-tutu.netlify.app/",
+    techStack: ['React', "Vite", "Tailwind"]
   },
   {
     id: "4",
@@ -234,6 +234,7 @@ export const projects = [
     iconUrl: benefitIcon1,
     imageUrl: 'cool-projects/dict.png',
     url: "https://dictionary-itskrish01.netlify.app/",
+    techStack: ['React', "Vite", "Tailwind"]
   },
   {
     id: "5",
@@ -243,6 +244,7 @@ export const projects = [
     iconUrl: benefitIcon2,
     imageUrl: 'cool-projects/ai.png',
     url: "https://ai-tooly-itskrish01.netlify.app/",
+    techStack: ['React', "Vite", "Tailwind"]
   },
 ];
 

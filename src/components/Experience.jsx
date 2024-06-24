@@ -29,7 +29,7 @@ const Experience = () => {
                   <div className="flex flex-wrap gap-2 mt-2">
                     {item.tags.map((item) => (
                       <div
-                        className="text-xs rounded-full bg-indigo-500/20 px-2 py-1 text-indigo-500"
+                        className="text-xs rounded-full bg-pink-500/20 px-2 py-1 text-pink-500"
                         key={item}
                       >
                         {item}

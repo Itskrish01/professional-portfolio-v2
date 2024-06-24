@@ -1,11 +1,15 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { projects } from "../constants";
 import Heading from "./Heading";
-import { PinContainer } from "./PinContainer";
 import Section from "./Section";
 
-import { FaLocationArrow } from "react-icons/fa6";
+import { ProjectCard } from "./design/Projects";
+import { useRef } from "react";
+import { Navigation } from "swiper/modules";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const Projects = () => {
+  const swiperRef = useRef();
   return (
     <Section id="projects">
       <div className="container relative z-2">
@@ -13,47 +17,42 @@ const Projects = () => {
           className="md:max-w-md lg:max-w-2xl"
           title="Some Of My Cool Projects, I Have Created"
         />
-        <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+        <Swiper
+          spaceBetween={50}
+          modules={[Navigation]}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+          onBeforeInit={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+        >
           {projects.map((item) => (
-            <a
-              href={item.url}
-              className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
-              key={item.id}
-            >
-              <PinContainer title={"project"} href={item.url}>
-                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                  <img
-                    src={item.imageUrl}
-                    alt="cover"
-                    className="z-10 object-cover rounded-lg"
-                  />
-                </div>
-
-                <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                  {item.title}
-                </h1>
-
-                <p
-                  className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                  style={{
-                    color: "#BEC1DD",
-                    margin: "1vh 0",
-                  }}
-                >
-                  {item.text}
-                </p>
-
-                <div className="flex items-center justify-between mt-7 mb-3">
-                  <div className="flex justify-center items-center">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-indigo-300">
-                      Check Live Site
-                    </p>
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
-                  </div>
-                </div>
-              </PinContainer>
-            </a>
+            <SwiperSlide key={item.id}>
+              <ProjectCard
+                description={item.text}
+                techStack={item.techStack}
+                imageSrc={item.imageUrl}
+                name={item.title}
+                link={item.url}
+              />
+            </SwiperSlide>
           ))}
+        </Swiper>
+        <div className="mt-16 flex justify-center gap-4">
+          <button
+            className="flex justify-center items-center hover:bg-pink-500 hover:text-white transistion-all duration-300 border-pink-500 p-3 rounded-full border-2"
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            <BsArrowLeft />
+          </button>
+          <button
+            className="flex justify-center items-center hover:bg-pink-500 hover:text-white transistion-all duration-300 border-pink-500 p-3 rounded-full border-2"
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            {" "}
+            <BsArrowRight />
+          </button>
         </div>
       </div>
     </Section>
