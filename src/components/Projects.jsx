@@ -20,8 +20,11 @@ const Projects = () => {
         <Swiper
           spaceBetween={50}
           breakpoints={{
-            576: {
+            300: {
               slidesPerView: 1,
+            },
+            600: {
+              slidesPerView: 2,
             },
             1028: {
               slidesPerView: 3,
