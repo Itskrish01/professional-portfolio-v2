@@ -19,6 +19,14 @@ const Projects = () => {
         />
         <Swiper
           spaceBetween={50}
+          breakpoints={{
+            576: {
+              slidesPerView: 1,
+            },
+            1028: {
+              slidesPerView: 3,
+            },
+          }}
           modules={[Navigation]}
           slidesPerView={3}
           onSlideChange={() => console.log("slide change")}

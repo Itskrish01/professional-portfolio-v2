@@ -20,7 +20,7 @@ const About = () => (
               }`}
               key={item.id}
             >
-              <div className="relative p-3 bg-n-8 rounded-[1rem] overflow-hidden xl:p-6">
+              <div className="relative p-5 bg-n-8 rounded-[1rem] overflow-hidden xl:p-6 ">
                 <Meteors />
                 <div className="relative z-1">
                   <h4 className="h4 mb-4">{item.title}</h4>
