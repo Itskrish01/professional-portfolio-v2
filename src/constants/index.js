@@ -246,6 +246,16 @@ export const projects = [
     url: "https://ai-tooly-itskrish01.netlify.app/",
     techStack: ['React', "Vite", "Tailwind"]
   },
+  {
+    id: "6",
+    title: "Travel landing page ui/ux",
+    text: "A travel app landing page ui/ux, focused on proving a great user experience.",
+    backgroundUrl: "./src/assets/projects/card-6.svg",
+    iconUrl: benefitIcon2,
+    imageUrl: 'cool-projects/travel.png',
+    url: "https://travel-landing-itskrish01.vercel.app/",
+    techStack: ['Next', "Tailwind"]
+  },
 ];
 
 export const socials = [
